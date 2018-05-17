@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
 import Products from './containers/ProductsContainer';
-import Message from './components/Message';
+import Message from './containers/MessageContainer';
 import Cart from './containers/CartContainer';
 import Footer from './components/Footer';
 

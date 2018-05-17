@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-
+import * as Messages from './../constants/Message';
 
 class Product extends Component {
 	render() {
-		const { product } = this.props;
+		const { product, onAddToCart, onChangeMessage } = this.props;
 		return (
 			<div className="col-lg-4 col-md-6 mb-r">
 				<div className="card text-center card-cascade narrower">
@@ -45,6 +45,10 @@ class Product extends Component {
 							<span className="left">{ product.price }$</span>
 							<span className="right">
                                             <a className="btn-floating blue-gradient" data-toggle="tooltip"
+                                               onClick={ () => {
+	                                                onAddToCart(product);
+	                                                onChangeMessage(Messages.MSG_ADD_TO_CART_SUCCESS);
+                                               }}
                                                data-placement="top" title="" data-original-title="Add to Cart">
                                                 <i className="fa fa-shopping-cart"></i>
                                             </a>
@@ -55,6 +59,7 @@ class Product extends Component {
 			</div>
 		);
 	}
+
 }
 
 export default Product;
